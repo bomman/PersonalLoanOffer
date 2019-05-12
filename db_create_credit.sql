@@ -30,7 +30,7 @@ create table USERS
    USER_ID int identity,
    USERNAME nvarchar(50) not null,
    PASSWORD nvarchar(50) not null,
-   constraint PK_USER   primary key (USER_ID)
+   constraint PK_USERS primary key (USER_ID)
 )
 go
 
