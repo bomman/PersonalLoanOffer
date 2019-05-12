@@ -5899,8 +5899,8 @@ SELECT PROD_CODE, PROD_PERIOD, SUM_FROM, SUM_TO FROM INTEREST WHERE (PROD_CODE =
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[PROD_PERIODS] ([PROD_CODE], [PROD_PERIOD]) VALUES (@PROD_CODE," +
-                " @PROD_PERIOD);\r\nSELECT PROD_CODE, PROD_PERIOD FROM PROD_PERIODS WHERE (PROD_COD" +
-                "E = @PROD_CODE) AND (PROD_PERIOD = @PROD_PERIOD)";
+                " @PROD_PERIOD);\nSELECT PROD_CODE, PROD_PERIOD FROM PROD_PERIODS WHERE (PROD_CODE" +
+                " = @PROD_CODE) AND (PROD_PERIOD = @PROD_PERIOD)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_CODE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_PERIOD", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_PERIOD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
