@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PersonalLoanOffer.CreditProducts;
+using System;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -38,5 +39,18 @@ namespace PersonalLoanOffer
             this.clientProductsGridView.DataSource = creditProducts;
         }
 
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            AddCreditProduct addCreditForm = new AddCreditProduct();
+            addCreditForm.MdiParent = this.ParentForm;
+            addCreditForm.Show();
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            EditCreditProduct editCreditForm = new EditCreditProduct();
+            editCreditForm.MdiParent = this.ParentForm;
+            editCreditForm.Show();
+        }
     }
 }

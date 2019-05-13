@@ -55,6 +55,11 @@
             this.sumFromUpDown = new System.Windows.Forms.NumericUpDown();
             this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.personalLoanOfferDataSet1 = new PersonalLoanOffer.PersonalLoanOfferDataSet();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.addButton = new System.Windows.Forms.Button();
+            this.editButton = new System.Windows.Forms.Button();
+            this.detailsButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.clientProductsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cREDIT_PRODUCTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalLoanOfferDataSet)).BeginInit();
@@ -83,7 +88,7 @@
             this.clientProductsGridView.DataSource = this.cREDIT_PRODUCTBindingSource;
             this.clientProductsGridView.Location = new System.Drawing.Point(12, 136);
             this.clientProductsGridView.Name = "clientProductsGridView";
-            this.clientProductsGridView.Size = new System.Drawing.Size(784, 302);
+            this.clientProductsGridView.Size = new System.Drawing.Size(784, 268);
             this.clientProductsGridView.TabIndex = 0;
             // 
             // pRODCODEDataGridViewTextBoxColumn
@@ -312,12 +317,54 @@
             this.personalLoanOfferDataSet1.DataSetName = "PersonalLoanOfferDataSet";
             this.personalLoanOfferDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // addButton
+            // 
+            this.addButton.Location = new System.Drawing.Point(21, 415);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.TabIndex = 4;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
+            // editButton
+            // 
+            this.editButton.Location = new System.Drawing.Point(120, 415);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(75, 23);
+            this.editButton.TabIndex = 5;
+            this.editButton.Text = "Edit";
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
+            // 
+            // detailsButton
+            // 
+            this.detailsButton.Location = new System.Drawing.Point(214, 415);
+            this.detailsButton.Name = "detailsButton";
+            this.detailsButton.Size = new System.Drawing.Size(75, 23);
+            this.detailsButton.TabIndex = 6;
+            this.detailsButton.Text = "Details";
+            this.detailsButton.UseVisualStyleBackColor = true;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(311, 415);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.TabIndex = 7;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            // 
             // CreditProductsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(810, 450);
+            this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.detailsButton);
+            this.Controls.Add(this.editButton);
+            this.Controls.Add(this.addButton);
             this.Controls.Add(this.controlsGroupBox);
             this.Controls.Add(this.clientProductsGridView);
             this.ForeColor = System.Drawing.Color.Black;
@@ -366,6 +413,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pRODSUMTODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mODIFDATEDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button searchButton;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Button editButton;
+        private System.Windows.Forms.Button detailsButton;
+        private System.Windows.Forms.Button deleteButton;
     }
 }
 

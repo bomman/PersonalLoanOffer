@@ -52,6 +52,18 @@
     <Compile Include="CreditProducts.Designer.cs">
       <DependentUpon>CreditProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreditProducts\AddCreditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreditProducts\AddCreditProduct.Designer.cs">
+      <DependentUpon>AddCreditProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreditProducts\EditCreditProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreditProducts\EditCreditProduct.Designer.cs">
+      <DependentUpon>EditCreditProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +100,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CreditProducts.resx">
       <DependentUpon>CreditProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreditProducts\AddCreditProduct.resx">
+      <DependentUpon>AddCreditProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreditProducts\EditCreditProduct.resx">
+      <DependentUpon>EditCreditProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
