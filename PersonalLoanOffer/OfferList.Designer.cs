@@ -35,6 +35,17 @@
             this.cREDITTableAdapter = new PersonalLoanOffer.PersonalLoanOfferDataSetTableAdapters.CREDITTableAdapter();
             this.tableAdapterManager = new PersonalLoanOffer.PersonalLoanOfferDataSetTableAdapters.TableAdapterManager();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cREDITIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cREDITNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cREDITDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cREDITPERIODDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cREDITENDDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cREDITBEGINDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cLIENTIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRODCODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cREDITSUMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cREDITNOTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mODIFDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.controlGroupBox = new System.Windows.Forms.GroupBox();
             this.interestRateUpDown = new System.Windows.Forms.NumericUpDown();
             this.searchButton = new System.Windows.Forms.Button();
@@ -49,17 +60,6 @@
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.offerNumberUpDown = new System.Windows.Forms.NumericUpDown();
             this.offerNumberLabel = new System.Windows.Forms.Label();
-            this.cREDITIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cREDITNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cREDITDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cREDITPERIODDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cREDITENDDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cREDITBEGINDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cLIENTIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRODCODEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cREDITSUMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cREDITNOTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mODIFDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.personalLoanOfferDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalLoanOfferDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cREDITBindingSource)).BeginInit();
@@ -123,142 +123,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(621, 240);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // controlGroupBox
-            // 
-            this.controlGroupBox.BackColor = System.Drawing.Color.Linen;
-            this.controlGroupBox.Controls.Add(this.interestRateUpDown);
-            this.controlGroupBox.Controls.Add(this.searchButton);
-            this.controlGroupBox.Controls.Add(this.interestRateLabel);
-            this.controlGroupBox.Controls.Add(this.endDateLabel);
-            this.controlGroupBox.Controls.Add(this.startDateLabel);
-            this.controlGroupBox.Controls.Add(this.dateTimePicker2);
-            this.controlGroupBox.Controls.Add(this.dateTimePicker1);
-            this.controlGroupBox.Controls.Add(this.creditAmountUpDown);
-            this.controlGroupBox.Controls.Add(this.creditSumLabel);
-            this.controlGroupBox.Controls.Add(this.textBox1);
-            this.controlGroupBox.Controls.Add(this.descriptionLabel);
-            this.controlGroupBox.Controls.Add(this.offerNumberUpDown);
-            this.controlGroupBox.Controls.Add(this.offerNumberLabel);
-            this.controlGroupBox.Location = new System.Drawing.Point(13, 13);
-            this.controlGroupBox.Name = "controlGroupBox";
-            this.controlGroupBox.Size = new System.Drawing.Size(621, 131);
-            this.controlGroupBox.TabIndex = 1;
-            this.controlGroupBox.TabStop = false;
-            this.controlGroupBox.Text = "Controls";
-            // 
-            // interestRateUpDown
-            // 
-            this.interestRateUpDown.Location = new System.Drawing.Point(472, 38);
-            this.interestRateUpDown.Name = "interestRateUpDown";
-            this.interestRateUpDown.Size = new System.Drawing.Size(120, 20);
-            this.interestRateUpDown.TabIndex = 14;
-            // 
-            // searchButton
-            // 
-            this.searchButton.BackColor = System.Drawing.Color.AliceBlue;
-            this.searchButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.searchButton.Location = new System.Drawing.Point(482, 102);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(110, 23);
-            this.searchButton.TabIndex = 13;
-            this.searchButton.Text = "Search";
-            this.searchButton.UseVisualStyleBackColor = false;
-            // 
-            // interestRateLabel
-            // 
-            this.interestRateLabel.AutoSize = true;
-            this.interestRateLabel.Location = new System.Drawing.Point(469, 21);
-            this.interestRateLabel.Name = "interestRateLabel";
-            this.interestRateLabel.Size = new System.Drawing.Size(68, 13);
-            this.interestRateLabel.TabIndex = 11;
-            this.interestRateLabel.Text = "Interest Rate";
-            this.interestRateLabel.Click += new System.EventHandler(this.label1_Click_4);
-            // 
-            // endDateLabel
-            // 
-            this.endDateLabel.AutoSize = true;
-            this.endDateLabel.Location = new System.Drawing.Point(185, 86);
-            this.endDateLabel.Name = "endDateLabel";
-            this.endDateLabel.Size = new System.Drawing.Size(52, 13);
-            this.endDateLabel.TabIndex = 10;
-            this.endDateLabel.Text = "End Date";
-            // 
-            // startDateLabel
-            // 
-            this.startDateLabel.AutoSize = true;
-            this.startDateLabel.Location = new System.Drawing.Point(10, 86);
-            this.startDateLabel.Name = "startDateLabel";
-            this.startDateLabel.Size = new System.Drawing.Size(55, 13);
-            this.startDateLabel.TabIndex = 9;
-            this.startDateLabel.Text = "Start Date";
-            this.startDateLabel.Click += new System.EventHandler(this.label1_Click_3);
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(185, 105);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(147, 20);
-            this.dateTimePicker2.TabIndex = 8;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(10, 105);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(154, 20);
-            this.dateTimePicker1.TabIndex = 7;
-            // 
-            // creditAmountUpDown
-            // 
-            this.creditAmountUpDown.Location = new System.Drawing.Point(308, 38);
-            this.creditAmountUpDown.Name = "creditAmountUpDown";
-            this.creditAmountUpDown.Size = new System.Drawing.Size(120, 20);
-            this.creditAmountUpDown.TabIndex = 6;
-            // 
-            // creditSumLabel
-            // 
-            this.creditSumLabel.AutoSize = true;
-            this.creditSumLabel.Location = new System.Drawing.Point(305, 21);
-            this.creditSumLabel.Name = "creditSumLabel";
-            this.creditSumLabel.Size = new System.Drawing.Size(73, 13);
-            this.creditSumLabel.TabIndex = 5;
-            this.creditSumLabel.Text = "Credit Amount";
-            this.creditSumLabel.Click += new System.EventHandler(this.label1_Click_2);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(172, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(106, 20);
-            this.textBox1.TabIndex = 4;
-            // 
-            // descriptionLabel
-            // 
-            this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Location = new System.Drawing.Point(169, 20);
-            this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(60, 13);
-            this.descriptionLabel.TabIndex = 3;
-            this.descriptionLabel.Text = "Description";
-            this.descriptionLabel.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // offerNumberUpDown
-            // 
-            this.offerNumberUpDown.Location = new System.Drawing.Point(10, 38);
-            this.offerNumberUpDown.Name = "offerNumberUpDown";
-            this.offerNumberUpDown.Size = new System.Drawing.Size(120, 20);
-            this.offerNumberUpDown.TabIndex = 2;
-            // 
-            // offerNumberLabel
-            // 
-            this.offerNumberLabel.AutoSize = true;
-            this.offerNumberLabel.Location = new System.Drawing.Point(7, 21);
-            this.offerNumberLabel.Name = "offerNumberLabel";
-            this.offerNumberLabel.Size = new System.Drawing.Size(70, 13);
-            this.offerNumberLabel.TabIndex = 1;
-            this.offerNumberLabel.Text = "Offer Number";
-            this.offerNumberLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // cREDITIDDataGridViewTextBoxColumn
             // 
@@ -329,6 +193,137 @@
             this.mODIFDATEDataGridViewTextBoxColumn.DataPropertyName = "MODIF_DATE";
             this.mODIFDATEDataGridViewTextBoxColumn.HeaderText = "Date of change";
             this.mODIFDATEDataGridViewTextBoxColumn.Name = "mODIFDATEDataGridViewTextBoxColumn";
+            // 
+            // controlGroupBox
+            // 
+            this.controlGroupBox.BackColor = System.Drawing.Color.Linen;
+            this.controlGroupBox.Controls.Add(this.interestRateUpDown);
+            this.controlGroupBox.Controls.Add(this.searchButton);
+            this.controlGroupBox.Controls.Add(this.interestRateLabel);
+            this.controlGroupBox.Controls.Add(this.endDateLabel);
+            this.controlGroupBox.Controls.Add(this.startDateLabel);
+            this.controlGroupBox.Controls.Add(this.dateTimePicker2);
+            this.controlGroupBox.Controls.Add(this.dateTimePicker1);
+            this.controlGroupBox.Controls.Add(this.creditAmountUpDown);
+            this.controlGroupBox.Controls.Add(this.creditSumLabel);
+            this.controlGroupBox.Controls.Add(this.textBox1);
+            this.controlGroupBox.Controls.Add(this.descriptionLabel);
+            this.controlGroupBox.Controls.Add(this.offerNumberUpDown);
+            this.controlGroupBox.Controls.Add(this.offerNumberLabel);
+            this.controlGroupBox.Location = new System.Drawing.Point(13, 13);
+            this.controlGroupBox.Name = "controlGroupBox";
+            this.controlGroupBox.Size = new System.Drawing.Size(621, 131);
+            this.controlGroupBox.TabIndex = 1;
+            this.controlGroupBox.TabStop = false;
+            this.controlGroupBox.Text = "Controls";
+            // 
+            // interestRateUpDown
+            // 
+            this.interestRateUpDown.Location = new System.Drawing.Point(472, 38);
+            this.interestRateUpDown.Name = "interestRateUpDown";
+            this.interestRateUpDown.Size = new System.Drawing.Size(120, 20);
+            this.interestRateUpDown.TabIndex = 14;
+            // 
+            // searchButton
+            // 
+            this.searchButton.BackColor = System.Drawing.Color.AliceBlue;
+            this.searchButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.searchButton.Location = new System.Drawing.Point(482, 102);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(110, 23);
+            this.searchButton.TabIndex = 13;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = false;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_OnClick);
+            // 
+            // interestRateLabel
+            // 
+            this.interestRateLabel.AutoSize = true;
+            this.interestRateLabel.Location = new System.Drawing.Point(469, 21);
+            this.interestRateLabel.Name = "interestRateLabel";
+            this.interestRateLabel.Size = new System.Drawing.Size(68, 13);
+            this.interestRateLabel.TabIndex = 11;
+            this.interestRateLabel.Text = "Interest Rate";
+            // 
+            // endDateLabel
+            // 
+            this.endDateLabel.AutoSize = true;
+            this.endDateLabel.Location = new System.Drawing.Point(185, 86);
+            this.endDateLabel.Name = "endDateLabel";
+            this.endDateLabel.Size = new System.Drawing.Size(52, 13);
+            this.endDateLabel.TabIndex = 10;
+            this.endDateLabel.Text = "End Date";
+            // 
+            // startDateLabel
+            // 
+            this.startDateLabel.AutoSize = true;
+            this.startDateLabel.Location = new System.Drawing.Point(10, 86);
+            this.startDateLabel.Name = "startDateLabel";
+            this.startDateLabel.Size = new System.Drawing.Size(55, 13);
+            this.startDateLabel.TabIndex = 9;
+            this.startDateLabel.Text = "Start Date";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(185, 105);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(147, 20);
+            this.dateTimePicker2.TabIndex = 8;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(10, 105);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(154, 20);
+            this.dateTimePicker1.TabIndex = 7;
+            // 
+            // creditAmountUpDown
+            // 
+            this.creditAmountUpDown.Location = new System.Drawing.Point(308, 38);
+            this.creditAmountUpDown.Name = "creditAmountUpDown";
+            this.creditAmountUpDown.Size = new System.Drawing.Size(120, 20);
+            this.creditAmountUpDown.TabIndex = 6;
+            // 
+            // creditSumLabel
+            // 
+            this.creditSumLabel.AutoSize = true;
+            this.creditSumLabel.Location = new System.Drawing.Point(305, 21);
+            this.creditSumLabel.Name = "creditSumLabel";
+            this.creditSumLabel.Size = new System.Drawing.Size(73, 13);
+            this.creditSumLabel.TabIndex = 5;
+            this.creditSumLabel.Text = "Credit Amount";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(172, 37);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(106, 20);
+            this.textBox1.TabIndex = 4;
+            // 
+            // descriptionLabel
+            // 
+            this.descriptionLabel.AutoSize = true;
+            this.descriptionLabel.Location = new System.Drawing.Point(169, 20);
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(60, 13);
+            this.descriptionLabel.TabIndex = 3;
+            this.descriptionLabel.Text = "Description";
+            // 
+            // offerNumberUpDown
+            // 
+            this.offerNumberUpDown.Location = new System.Drawing.Point(10, 38);
+            this.offerNumberUpDown.Name = "offerNumberUpDown";
+            this.offerNumberUpDown.Size = new System.Drawing.Size(120, 20);
+            this.offerNumberUpDown.TabIndex = 2;
+            // 
+            // offerNumberLabel
+            // 
+            this.offerNumberLabel.AutoSize = true;
+            this.offerNumberLabel.Location = new System.Drawing.Point(7, 21);
+            this.offerNumberLabel.Name = "offerNumberLabel";
+            this.offerNumberLabel.Size = new System.Drawing.Size(70, 13);
+            this.offerNumberLabel.TabIndex = 1;
+            this.offerNumberLabel.Text = "Offer Number";
             // 
             // OfferList
             // 

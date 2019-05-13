@@ -17,11 +17,6 @@ namespace PersonalLoanOffer
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'personalLoanOfferDataSet.CREDIT_PRODUCT' table. You can move, or remove it, as needed.
@@ -29,12 +24,7 @@ namespace PersonalLoanOffer
             var creditProducts = this.personalLoanOfferDataSet.CREDIT_PRODUCT;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void searchTextBox_TextChanged(object sender, EventArgs e)
+        private void searchButton_OnClick(object sender, EventArgs e)
         {
             var searchText = this.searchTextBox.Text;
             var creditProducts = this.personalLoanOfferDataSet.CREDIT_PRODUCT
@@ -42,31 +32,6 @@ namespace PersonalLoanOffer
                             || p.PROD_NAME.Contains(searchText)
                             || p.PROD_SUM_FROM.ToString().Contains(searchText)
                 );
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void sumToLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void controlsGroupBox_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pROD_CODETextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pROD_CODELabel_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
