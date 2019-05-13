@@ -55,7 +55,6 @@
             this.sumFromUpDown = new System.Windows.Forms.NumericUpDown();
             this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.personalLoanOfferDataSet1 = new PersonalLoanOffer.PersonalLoanOfferDataSet();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.addButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.detailsButton = new System.Windows.Forms.Button();
@@ -413,7 +412,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pRODSUMTODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mODIFDATEDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button searchButton;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button detailsButton;

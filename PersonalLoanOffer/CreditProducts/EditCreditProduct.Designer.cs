@@ -38,11 +38,13 @@
             this.sumFromLabel = new System.Windows.Forms.Label();
             this.sumFromUpDown = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.personalLoanOfferDataSet1 = new PersonalLoanOffer.PersonalLoanOfferDataSet();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sumToUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sumFromUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personalLoanOfferDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -75,7 +77,7 @@
             this.groupBox1.Controls.Add(this.sumFromLabel);
             this.groupBox1.Controls.Add(this.sumFromUpDown);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.nameTextBox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 29);
             this.groupBox1.Name = "groupBox1";
@@ -176,12 +178,12 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Status";
             // 
-            // textBox1
+            // nameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(90, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(158, 20);
-            this.textBox1.TabIndex = 1;
+            this.nameTextBox.Location = new System.Drawing.Point(90, 19);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(158, 20);
+            this.nameTextBox.TabIndex = 1;
             // 
             // label1
             // 
@@ -191,6 +193,11 @@
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
+            // 
+            // personalLoanOfferDataSet1
+            // 
+            this.personalLoanOfferDataSet1.DataSetName = "PersonalLoanOfferDataSet";
+            this.personalLoanOfferDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // EditCreditProduct
             // 
@@ -202,10 +209,12 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "EditCreditProduct";
             this.Text = "EditCreditProduct";
+            this.Load += new System.EventHandler(this.EditCreditProduct_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sumToUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sumFromUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personalLoanOfferDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,7 +232,8 @@
         private System.Windows.Forms.Label sumFromLabel;
         private System.Windows.Forms.NumericUpDown sumFromUpDown;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Label label1;
+        private PersonalLoanOfferDataSet personalLoanOfferDataSet1;
     }
 }

@@ -24,17 +24,22 @@ namespace PersonalLoanOffer
         {
             var codeTextBox = this.codeTextBox.Text;
             var nameTextBox = this.nameTextBox.Text;
-            var status = this.statusComboBox.Text == "Yes" ? "Y" : "N";
+            var status = this.statusComboBox.Text;
             var sumFrom = this.sumFromUpDown.Value;
             var sumTo = this.sumToUpDown.Value;
             
+            if (string.IsNullOrEmpty(status))
+            {
+                var isActive = status == "Yes" ? "Y" : "N";
+            }
+
             var creditProducts = this.personalLoanOfferDataSet.CREDIT_PRODUCT
                 .Where(p => p.PROD_CODE.ToString().Contains(codeTextBox)
                             && p.PROD_NAME.Contains(nameTextBox)
-                            && p.PROD_ACTIVE == status
+                            && !string.IsNullOrEmpty(status) ? p.PROD_ACTIVE == status : true
                             && p.PROD_SUM_FROM >= sumFrom
                             && p.PROD_SUM_TO <= sumTo
-                ).ToList();
+                );
 
             this.clientProductsGridView.DataSource = creditProducts;
         }
@@ -48,7 +53,8 @@ namespace PersonalLoanOffer
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            EditCreditProduct editCreditForm = new EditCreditProduct();
+            var selectedRecord = int.Parse(this.clientProductsGridView.CurrentRow.Cells[0].Value.ToString());
+            EditCreditProduct editCreditForm = new EditCreditProduct(selectedRecord);
             editCreditForm.MdiParent = this.ParentForm;
             editCreditForm.Show();
         }

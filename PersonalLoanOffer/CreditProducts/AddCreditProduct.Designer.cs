@@ -36,13 +36,15 @@
             this.sumFromLabel = new System.Windows.Forms.Label();
             this.sumFromUpDown = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.createButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.personalLoanOfferDataSet1 = new PersonalLoanOffer.PersonalLoanOfferDataSet();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sumToUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sumFromUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personalLoanOfferDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -54,7 +56,7 @@
             this.groupBox1.Controls.Add(this.sumFromLabel);
             this.groupBox1.Controls.Add(this.sumFromUpDown);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.nameTextBox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 29);
             this.groupBox1.Name = "groupBox1";
@@ -85,7 +87,6 @@
             this.statusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.statusComboBox.FormattingEnabled = true;
             this.statusComboBox.Items.AddRange(new object[] {
-            "All",
             "Yes",
             "No"});
             this.statusComboBox.Location = new System.Drawing.Point(90, 56);
@@ -155,12 +156,12 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Status";
             // 
-            // textBox1
+            // nameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(90, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(158, 20);
-            this.textBox1.TabIndex = 1;
+            this.nameTextBox.Location = new System.Drawing.Point(90, 19);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(158, 20);
+            this.nameTextBox.TabIndex = 1;
             // 
             // label1
             // 
@@ -192,6 +193,11 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Add Credit Product";
             // 
+            // personalLoanOfferDataSet1
+            // 
+            this.personalLoanOfferDataSet1.DataSetName = "PersonalLoanOfferDataSet";
+            this.personalLoanOfferDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // AddCreditProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,6 +212,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sumToUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sumFromUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personalLoanOfferDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,7 +221,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox statusComboBox;
@@ -225,5 +232,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button createButton;
         private System.Windows.Forms.Label label3;
+        private PersonalLoanOfferDataSet personalLoanOfferDataSet1;
     }
 }
