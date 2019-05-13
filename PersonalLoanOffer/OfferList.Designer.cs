@@ -34,7 +34,7 @@
             this.cREDITBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cREDITTableAdapter = new PersonalLoanOffer.PersonalLoanOfferDataSetTableAdapters.CREDITTableAdapter();
             this.tableAdapterManager = new PersonalLoanOffer.PersonalLoanOfferDataSetTableAdapters.TableAdapterManager();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.offerDataGridView = new System.Windows.Forms.DataGridView();
             this.cREDITIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cREDITNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cREDITDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,18 +52,18 @@
             this.interestRateLabel = new System.Windows.Forms.Label();
             this.endDateLabel = new System.Windows.Forms.Label();
             this.startDateLabel = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.endDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.startDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.creditAmountUpDown = new System.Windows.Forms.NumericUpDown();
             this.creditSumLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.offerNumberUpDown = new System.Windows.Forms.NumericUpDown();
             this.offerNumberLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.personalLoanOfferDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalLoanOfferDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cREDITBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.offerDataGridView)).BeginInit();
             this.controlGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.interestRateUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.creditAmountUpDown)).BeginInit();
@@ -100,13 +100,13 @@
             this.tableAdapterManager.PROD_PERIODSTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = PersonalLoanOffer.PersonalLoanOfferDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // dataGridView1
+            // offerDataGridView
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.offerDataGridView.AutoGenerateColumns = false;
+            this.offerDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.offerDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.offerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.offerDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cREDITIDDataGridViewTextBoxColumn,
             this.cREDITNODataGridViewTextBoxColumn,
             this.cREDITDATEDataGridViewTextBoxColumn,
@@ -118,11 +118,11 @@
             this.cREDITSUMDataGridViewTextBoxColumn,
             this.cREDITNOTEDataGridViewTextBoxColumn,
             this.mODIFDATEDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.cREDITBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 171);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(621, 240);
-            this.dataGridView1.TabIndex = 0;
+            this.offerDataGridView.DataSource = this.cREDITBindingSource;
+            this.offerDataGridView.Location = new System.Drawing.Point(13, 171);
+            this.offerDataGridView.Name = "offerDataGridView";
+            this.offerDataGridView.Size = new System.Drawing.Size(621, 240);
+            this.offerDataGridView.TabIndex = 0;
             // 
             // cREDITIDDataGridViewTextBoxColumn
             // 
@@ -202,11 +202,11 @@
             this.controlGroupBox.Controls.Add(this.interestRateLabel);
             this.controlGroupBox.Controls.Add(this.endDateLabel);
             this.controlGroupBox.Controls.Add(this.startDateLabel);
-            this.controlGroupBox.Controls.Add(this.dateTimePicker2);
-            this.controlGroupBox.Controls.Add(this.dateTimePicker1);
+            this.controlGroupBox.Controls.Add(this.endDateTimePicker);
+            this.controlGroupBox.Controls.Add(this.startDateTimePicker);
             this.controlGroupBox.Controls.Add(this.creditAmountUpDown);
             this.controlGroupBox.Controls.Add(this.creditSumLabel);
-            this.controlGroupBox.Controls.Add(this.textBox1);
+            this.controlGroupBox.Controls.Add(this.descriptionTextBox);
             this.controlGroupBox.Controls.Add(this.descriptionLabel);
             this.controlGroupBox.Controls.Add(this.offerNumberUpDown);
             this.controlGroupBox.Controls.Add(this.offerNumberLabel);
@@ -263,19 +263,19 @@
             this.startDateLabel.TabIndex = 9;
             this.startDateLabel.Text = "Start Date";
             // 
-            // dateTimePicker2
+            // endDateTimePicker
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(185, 105);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(147, 20);
-            this.dateTimePicker2.TabIndex = 8;
+            this.endDateTimePicker.Location = new System.Drawing.Point(185, 105);
+            this.endDateTimePicker.Name = "endDateTimePicker";
+            this.endDateTimePicker.Size = new System.Drawing.Size(147, 20);
+            this.endDateTimePicker.TabIndex = 8;
             // 
-            // dateTimePicker1
+            // startDateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(10, 105);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(154, 20);
-            this.dateTimePicker1.TabIndex = 7;
+            this.startDateTimePicker.Location = new System.Drawing.Point(10, 105);
+            this.startDateTimePicker.Name = "startDateTimePicker";
+            this.startDateTimePicker.Size = new System.Drawing.Size(154, 20);
+            this.startDateTimePicker.TabIndex = 7;
             // 
             // creditAmountUpDown
             // 
@@ -293,12 +293,12 @@
             this.creditSumLabel.TabIndex = 5;
             this.creditSumLabel.Text = "Credit Amount";
             // 
-            // textBox1
+            // descriptionTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(172, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(106, 20);
-            this.textBox1.TabIndex = 4;
+            this.descriptionTextBox.Location = new System.Drawing.Point(172, 37);
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(106, 20);
+            this.descriptionTextBox.TabIndex = 4;
             // 
             // descriptionLabel
             // 
@@ -332,14 +332,14 @@
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(647, 450);
             this.Controls.Add(this.controlGroupBox);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.offerDataGridView);
             this.Name = "OfferList";
             this.Text = "OfferList";
             this.Load += new System.EventHandler(this.OfferList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.personalLoanOfferDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalLoanOfferDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cREDITBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.offerDataGridView)).EndInit();
             this.controlGroupBox.ResumeLayout(false);
             this.controlGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.interestRateUpDown)).EndInit();
@@ -355,17 +355,17 @@
         private System.Windows.Forms.BindingSource cREDITBindingSource;
         private PersonalLoanOfferDataSetTableAdapters.CREDITTableAdapter cREDITTableAdapter;
         private PersonalLoanOfferDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView offerDataGridView;
         private System.Windows.Forms.GroupBox controlGroupBox;
         private System.Windows.Forms.Label offerNumberLabel;
         private System.Windows.Forms.Label descriptionLabel;
         private System.Windows.Forms.NumericUpDown offerNumberUpDown;
         private System.Windows.Forms.Label creditSumLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox descriptionTextBox;
         private System.Windows.Forms.NumericUpDown creditAmountUpDown;
         private System.Windows.Forms.Label startDateLabel;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker endDateTimePicker;
+        private System.Windows.Forms.DateTimePicker startDateTimePicker;
         private System.Windows.Forms.Label endDateLabel;
         private System.Windows.Forms.Label interestRateLabel;
         private System.Windows.Forms.Button searchButton;
