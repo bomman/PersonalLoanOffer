@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PersonalLoanOffer
@@ -26,12 +21,22 @@ namespace PersonalLoanOffer
 
         private void searchButton_OnClick(object sender, EventArgs e)
         {
-            var searchText = this.searchTextBox.Text;
+            var codeTextBox = this.codeTextBox.Text;
+            var nameTextBox = this.nameTextBox.Text;
+            var status = this.statusComboBox.Text == "Yes" ? "Y" : "N";
+            var sumFrom = this.sumFromUpDown.Value;
+            var sumTo = this.sumToUpDown.Value;
+            
             var creditProducts = this.personalLoanOfferDataSet.CREDIT_PRODUCT
-                .Where(p => p.PROD_CODE.ToString().Contains(searchText)
-                            || p.PROD_NAME.Contains(searchText)
-                            || p.PROD_SUM_FROM.ToString().Contains(searchText)
-                );
+                .Where(p => p.PROD_CODE.ToString().Contains(codeTextBox)
+                            && p.PROD_NAME.Contains(nameTextBox)
+                            && p.PROD_ACTIVE == status
+                            && p.PROD_SUM_FROM >= sumFrom
+                            && p.PROD_SUM_TO <= sumTo
+                ).ToList();
+
+            this.clientProductsGridView.DataSource = creditProducts;
         }
+
     }
 }

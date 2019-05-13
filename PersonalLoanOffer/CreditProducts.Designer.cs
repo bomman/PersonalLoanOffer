@@ -43,19 +43,17 @@
             this.tableAdapterManager = new PersonalLoanOffer.PersonalLoanOfferDataSetTableAdapters.TableAdapterManager();
             this.searchLabel = new System.Windows.Forms.Label();
             this.cREDIT_PRODUCTBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.codeTextBox = new System.Windows.Forms.TextBox();
             this.controlsGroupBox = new System.Windows.Forms.GroupBox();
             this.searchButton = new System.Windows.Forms.Button();
-            this.calendarLabel = new System.Windows.Forms.Label();
             this.sumToLabel = new System.Windows.Forms.Label();
             this.sumFromLabel = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.modifiedDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.sumToUpDown = new System.Windows.Forms.NumericUpDown();
             this.sumFromUpDown = new System.Windows.Forms.NumericUpDown();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.personalLoanOfferDataSet1 = new PersonalLoanOffer.PersonalLoanOfferDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.clientProductsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cREDIT_PRODUCTBindingSource)).BeginInit();
@@ -169,27 +167,25 @@
             this.cREDIT_PRODUCTBindingSource1.DataMember = "CREDIT_PRODUCT";
             this.cREDIT_PRODUCTBindingSource1.DataSource = this.personalLoanOfferDataSet;
             // 
-            // searchTextBox
+            // codeTextBox
             // 
-            this.searchTextBox.Location = new System.Drawing.Point(9, 42);
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(100, 20);
-            this.searchTextBox.TabIndex = 2;
+            this.codeTextBox.Location = new System.Drawing.Point(9, 42);
+            this.codeTextBox.Name = "codeTextBox";
+            this.codeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.codeTextBox.TabIndex = 2;
             // 
             // controlsGroupBox
             // 
             this.controlsGroupBox.Controls.Add(this.searchButton);
-            this.controlsGroupBox.Controls.Add(this.calendarLabel);
             this.controlsGroupBox.Controls.Add(this.sumToLabel);
             this.controlsGroupBox.Controls.Add(this.sumFromLabel);
             this.controlsGroupBox.Controls.Add(this.nameTextBox);
             this.controlsGroupBox.Controls.Add(this.label2);
             this.controlsGroupBox.Controls.Add(this.label1);
-            this.controlsGroupBox.Controls.Add(this.modifiedDateTimePicker);
             this.controlsGroupBox.Controls.Add(this.sumToUpDown);
             this.controlsGroupBox.Controls.Add(this.sumFromUpDown);
-            this.controlsGroupBox.Controls.Add(this.comboBox1);
-            this.controlsGroupBox.Controls.Add(this.searchTextBox);
+            this.controlsGroupBox.Controls.Add(this.statusComboBox);
+            this.controlsGroupBox.Controls.Add(this.codeTextBox);
             this.controlsGroupBox.Controls.Add(this.searchLabel);
             this.controlsGroupBox.ForeColor = System.Drawing.SystemColors.ControlText;
             this.controlsGroupBox.Location = new System.Drawing.Point(12, 12);
@@ -210,15 +206,6 @@
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = false;
             this.searchButton.Click += new System.EventHandler(this.searchButton_OnClick);
-            // 
-            // calendarLabel
-            // 
-            this.calendarLabel.AutoSize = true;
-            this.calendarLabel.Location = new System.Drawing.Point(297, 76);
-            this.calendarLabel.Name = "calendarLabel";
-            this.calendarLabel.Size = new System.Drawing.Size(73, 13);
-            this.calendarLabel.TabIndex = 13;
-            this.calendarLabel.Text = "Modified Date";
             // 
             // sumToLabel
             // 
@@ -262,13 +249,6 @@
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 8;
             this.label1.Text = "Name";
-            // 
-            // modifiedDateTimePicker
-            // 
-            this.modifiedDateTimePicker.Location = new System.Drawing.Point(300, 92);
-            this.modifiedDateTimePicker.Name = "modifiedDateTimePicker";
-            this.modifiedDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.modifiedDateTimePicker.TabIndex = 7;
             // 
             // sumToUpDown
             // 
@@ -314,18 +294,18 @@
             0,
             0});
             // 
-            // comboBox1
+            // statusComboBox
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.statusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.statusComboBox.FormattingEnabled = true;
+            this.statusComboBox.Items.AddRange(new object[] {
             "All",
             "Yes",
             "No"});
-            this.comboBox1.Location = new System.Drawing.Point(466, 43);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 3;
+            this.statusComboBox.Location = new System.Drawing.Point(466, 43);
+            this.statusComboBox.Name = "statusComboBox";
+            this.statusComboBox.Size = new System.Drawing.Size(121, 21);
+            this.statusComboBox.TabIndex = 3;
             // 
             // personalLoanOfferDataSet1
             // 
@@ -368,19 +348,17 @@
         private PersonalLoanOfferDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Label searchLabel;
         private System.Windows.Forms.BindingSource cREDIT_PRODUCTBindingSource1;
-        private System.Windows.Forms.TextBox searchTextBox;
+        private System.Windows.Forms.TextBox codeTextBox;
         private System.Windows.Forms.GroupBox controlsGroupBox;
-        private System.Windows.Forms.DateTimePicker modifiedDateTimePicker;
         private System.Windows.Forms.NumericUpDown sumToUpDown;
         private System.Windows.Forms.NumericUpDown sumFromUpDown;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox statusComboBox;
         private PersonalLoanOfferDataSet personalLoanOfferDataSet1;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label sumToLabel;
         private System.Windows.Forms.Label sumFromLabel;
-        private System.Windows.Forms.Label calendarLabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn pRODCODEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pRODNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pRODACTIVEDataGridViewTextBoxColumn;
