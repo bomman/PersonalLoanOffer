@@ -1978,6 +1978,8 @@ namespace PersonalLoanOffer {
             
             private global::System.Data.DataColumn columnSUM_TO;
             
+            private global::System.Data.DataColumn columnINTEREST_RATE;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public INTERESTDataTable() {
@@ -2045,6 +2047,14 @@ namespace PersonalLoanOffer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn INTEREST_RATEColumn {
+                get {
+                    return this.columnINTEREST_RATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2080,13 +2090,14 @@ namespace PersonalLoanOffer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public INTERESTRow AddINTERESTRow(int PROD_CODE, int PROD_PERIOD, decimal SUM_FROM, decimal SUM_TO) {
+            public INTERESTRow AddINTERESTRow(int PROD_CODE, int PROD_PERIOD, decimal SUM_FROM, decimal SUM_TO, decimal INTEREST_RATE) {
                 INTERESTRow rowINTERESTRow = ((INTERESTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         PROD_CODE,
                         PROD_PERIOD,
                         SUM_FROM,
-                        SUM_TO};
+                        SUM_TO,
+                        INTEREST_RATE};
                 rowINTERESTRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowINTERESTRow);
                 return rowINTERESTRow;
@@ -2123,6 +2134,7 @@ namespace PersonalLoanOffer {
                 this.columnPROD_PERIOD = base.Columns["PROD_PERIOD"];
                 this.columnSUM_FROM = base.Columns["SUM_FROM"];
                 this.columnSUM_TO = base.Columns["SUM_TO"];
+                this.columnINTEREST_RATE = base.Columns["INTEREST_RATE"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2136,6 +2148,8 @@ namespace PersonalLoanOffer {
                 base.Columns.Add(this.columnSUM_FROM);
                 this.columnSUM_TO = new global::System.Data.DataColumn("SUM_TO", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSUM_TO);
+                this.columnINTEREST_RATE = new global::System.Data.DataColumn("INTEREST_RATE", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnINTEREST_RATE);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnPROD_CODE,
                                 this.columnPROD_PERIOD,
@@ -2145,6 +2159,7 @@ namespace PersonalLoanOffer {
                 this.columnPROD_PERIOD.AllowDBNull = false;
                 this.columnSUM_FROM.AllowDBNull = false;
                 this.columnSUM_TO.AllowDBNull = false;
+                this.columnINTEREST_RATE.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3267,6 +3282,17 @@ namespace PersonalLoanOffer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public decimal INTEREST_RATE {
+                get {
+                    return ((decimal)(this[this.tableINTEREST.INTEREST_RATEColumn]));
+                }
+                set {
+                    this[this.tableINTEREST.INTEREST_RATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public PROD_PERIODSRow PROD_PERIODSRowParent {
                 get {
                     return ((PROD_PERIODSRow)(this.GetParentRow(this.Table.ParentRelations["FK_INTEREST_REFERENCE_PROD_PER"])));
@@ -4331,13 +4357,28 @@ SELECT CREDIT_ID, CREDIT_NO, CREDIT_DATE, CREDIT_PERIOD, CREDIT_END_DATE, CREDIT
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT CREDIT_ID, CREDIT_NO, CREDIT_DATE, CREDIT_PERIOD, CREDIT_END_DATE, CREDIT_" +
                 "BEGIN_DATE, CLIENT_ID, PROD_CODE, CREDIT_SUM, CREDIT_NOTE, MODIF_DATE FROM dbo.C" +
                 "REDIT";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"INSERT INTO [dbo].[CREDIT] ([CREDIT_NO], [CREDIT_DATE], [CREDIT_PERIOD], [CREDIT_END_DATE], [CREDIT_BEGIN_DATE], [CLIENT_ID], [PROD_CODE], [CREDIT_SUM], [CREDIT_NOTE], [MODIF_DATE]) VALUES (@CREDIT_NO, @CREDIT_DATE, @CREDIT_PERIOD, @CREDIT_END_DATE, @CREDIT_BEGIN_DATE, @CLIENT_ID, @PROD_CODE, @CREDIT_SUM, @CREDIT_NOTE, @MODIF_DATE);
+SELECT CREDIT_ID, CREDIT_NO, CREDIT_DATE, CREDIT_PERIOD, CREDIT_END_DATE, CREDIT_BEGIN_DATE, CLIENT_ID, PROD_CODE, CREDIT_SUM, CREDIT_NOTE, MODIF_DATE FROM CREDIT WHERE (CREDIT_ID = SCOPE_IDENTITY())";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CREDIT_NO", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CREDIT_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CREDIT_DATE", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "CREDIT_DATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CREDIT_PERIOD", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CREDIT_PERIOD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CREDIT_END_DATE", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "CREDIT_END_DATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CREDIT_BEGIN_DATE", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "CREDIT_BEGIN_DATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CLIENT_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CLIENT_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_CODE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CREDIT_SUM", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 10, 2, "CREDIT_SUM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CREDIT_NOTE", global::System.Data.SqlDbType.NVarChar, 400, global::System.Data.ParameterDirection.Input, 0, 0, "CREDIT_NOTE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MODIF_DATE", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "MODIF_DATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4351,17 +4392,6 @@ SELECT CREDIT_ID, CREDIT_NO, CREDIT_DATE, CREDIT_PERIOD, CREDIT_END_DATE, CREDIT
             }
             int returnValue = this.Adapter.Fill(dataTable);
             return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PersonalLoanOfferDataSet.CREDITDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            PersonalLoanOfferDataSet.CREDITDataTable dataTable = new PersonalLoanOfferDataSet.CREDITDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4640,6 +4670,65 @@ SELECT CREDIT_ID, CREDIT_NO, CREDIT_DATE, CREDIT_PERIOD, CREDIT_END_DATE, CREDIT
                     string Original_CREDIT_NOTE, 
                     global::System.Nullable<global::System.DateTime> Original_MODIF_DATE) {
             return this.Update(CREDIT_NO, CREDIT_DATE, CREDIT_PERIOD, CREDIT_END_DATE, CREDIT_BEGIN_DATE, CLIENT_ID, PROD_CODE, CREDIT_SUM, CREDIT_NOTE, MODIF_DATE, Original_CREDIT_ID, Original_CREDIT_NO, Original_CREDIT_DATE, Original_CREDIT_PERIOD, Original_CREDIT_END_DATE, Original_CREDIT_BEGIN_DATE, Original_CLIENT_ID, Original_PROD_CODE, Original_CREDIT_SUM, Original_CREDIT_NOTE, Original_MODIF_DATE, Original_CREDIT_ID);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual object InsertQuery(string CREDIT_NO, System.DateTime CREDIT_DATE, int CREDIT_PERIOD, System.DateTime CREDIT_END_DATE, System.DateTime CREDIT_BEGIN_DATE, int CLIENT_ID, global::System.Nullable<int> PROD_CODE, decimal CREDIT_SUM, string CREDIT_NOTE, global::System.Nullable<global::System.DateTime> MODIF_DATE) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((CREDIT_NO == null)) {
+                throw new global::System.ArgumentNullException("CREDIT_NO");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(CREDIT_NO));
+            }
+            command.Parameters[1].Value = ((System.DateTime)(CREDIT_DATE));
+            command.Parameters[2].Value = ((int)(CREDIT_PERIOD));
+            command.Parameters[3].Value = ((System.DateTime)(CREDIT_END_DATE));
+            command.Parameters[4].Value = ((System.DateTime)(CREDIT_BEGIN_DATE));
+            command.Parameters[5].Value = ((int)(CLIENT_ID));
+            if ((PROD_CODE.HasValue == true)) {
+                command.Parameters[6].Value = ((int)(PROD_CODE.Value));
+            }
+            else {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[7].Value = ((decimal)(CREDIT_SUM));
+            if ((CREDIT_NOTE == null)) {
+                command.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[8].Value = ((string)(CREDIT_NOTE));
+            }
+            if ((MODIF_DATE.HasValue == true)) {
+                command.Parameters[9].Value = ((System.DateTime)(MODIF_DATE.Value));
+            }
+            else {
+                command.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
         }
     }
     
@@ -5572,39 +5661,44 @@ SELECT PROD_CODE, PROD_NAME, PROD_ACTIVE, PROD_SUM_FROM, PROD_SUM_TO, MODIF_DATE
             tableMapping.ColumnMappings.Add("PROD_PERIOD", "PROD_PERIOD");
             tableMapping.ColumnMappings.Add("SUM_FROM", "SUM_FROM");
             tableMapping.ColumnMappings.Add("SUM_TO", "SUM_TO");
+            tableMapping.ColumnMappings.Add("INTEREST_RATE", "INTEREST_RATE");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[INTEREST] WHERE (([PROD_CODE] = @Original_PROD_CODE) AND ([PRO" +
                 "D_PERIOD] = @Original_PROD_PERIOD) AND ([SUM_FROM] = @Original_SUM_FROM) AND ([S" +
-                "UM_TO] = @Original_SUM_TO))";
+                "UM_TO] = @Original_SUM_TO) AND ([INTEREST_RATE] = @Original_INTEREST_RATE))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PROD_CODE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_CODE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PROD_PERIOD", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_PERIOD", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SUM_FROM", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "SUM_FROM", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SUM_TO", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "SUM_TO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_INTEREST_RATE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "INTEREST_RATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[INTEREST] ([PROD_CODE], [PROD_PERIOD], [SUM_FROM], [SUM_TO]) VALUES (@PROD_CODE, @PROD_PERIOD, @SUM_FROM, @SUM_TO);
-SELECT PROD_CODE, PROD_PERIOD, SUM_FROM, SUM_TO FROM INTEREST WHERE (PROD_CODE = @PROD_CODE) AND (PROD_PERIOD = @PROD_PERIOD) AND (SUM_FROM = @SUM_FROM) AND (SUM_TO = @SUM_TO)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[INTEREST] ([PROD_CODE], [PROD_PERIOD], [SUM_FROM], [SUM_TO], [INTEREST_RATE]) VALUES (@PROD_CODE, @PROD_PERIOD, @SUM_FROM, @SUM_TO, @INTEREST_RATE);
+SELECT PROD_CODE, PROD_PERIOD, SUM_FROM, SUM_TO, INTEREST_RATE FROM INTEREST WHERE (PROD_CODE = @PROD_CODE) AND (PROD_PERIOD = @PROD_PERIOD) AND (SUM_FROM = @SUM_FROM) AND (SUM_TO = @SUM_TO)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_CODE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_PERIOD", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_PERIOD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SUM_FROM", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "SUM_FROM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SUM_TO", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "SUM_TO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@INTEREST_RATE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "INTEREST_RATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[INTEREST] SET [PROD_CODE] = @PROD_CODE, [PROD_PERIOD] = @PROD_PERIOD, [SUM_FROM] = @SUM_FROM, [SUM_TO] = @SUM_TO WHERE (([PROD_CODE] = @Original_PROD_CODE) AND ([PROD_PERIOD] = @Original_PROD_PERIOD) AND ([SUM_FROM] = @Original_SUM_FROM) AND ([SUM_TO] = @Original_SUM_TO));
-SELECT PROD_CODE, PROD_PERIOD, SUM_FROM, SUM_TO FROM INTEREST WHERE (PROD_CODE = @PROD_CODE) AND (PROD_PERIOD = @PROD_PERIOD) AND (SUM_FROM = @SUM_FROM) AND (SUM_TO = @SUM_TO)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[INTEREST] SET [PROD_CODE] = @PROD_CODE, [PROD_PERIOD] = @PROD_PERIOD, [SUM_FROM] = @SUM_FROM, [SUM_TO] = @SUM_TO, [INTEREST_RATE] = @INTEREST_RATE WHERE (([PROD_CODE] = @Original_PROD_CODE) AND ([PROD_PERIOD] = @Original_PROD_PERIOD) AND ([SUM_FROM] = @Original_SUM_FROM) AND ([SUM_TO] = @Original_SUM_TO) AND ([INTEREST_RATE] = @Original_INTEREST_RATE));
+SELECT PROD_CODE, PROD_PERIOD, SUM_FROM, SUM_TO, INTEREST_RATE FROM INTEREST WHERE (PROD_CODE = @PROD_CODE) AND (PROD_PERIOD = @PROD_PERIOD) AND (SUM_FROM = @SUM_FROM) AND (SUM_TO = @SUM_TO)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_CODE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_PERIOD", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_PERIOD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SUM_FROM", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "SUM_FROM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SUM_TO", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "SUM_TO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@INTEREST_RATE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "INTEREST_RATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PROD_CODE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_CODE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PROD_PERIOD", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_PERIOD", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SUM_FROM", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "SUM_FROM", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SUM_TO", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "SUM_TO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_INTEREST_RATE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "INTEREST_RATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5620,7 +5714,7 @@ SELECT PROD_CODE, PROD_PERIOD, SUM_FROM, SUM_TO FROM INTEREST WHERE (PROD_CODE =
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT PROD_CODE, PROD_PERIOD, SUM_FROM, SUM_TO FROM dbo.INTEREST";
+            this._commandCollection[0].CommandText = "SELECT PROD_CODE, PROD_PERIOD, SUM_FROM, SUM_TO, INTEREST_RATE FROM dbo.INTEREST";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5681,11 +5775,12 @@ SELECT PROD_CODE, PROD_PERIOD, SUM_FROM, SUM_TO FROM INTEREST WHERE (PROD_CODE =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_PROD_CODE, int Original_PROD_PERIOD, decimal Original_SUM_FROM, decimal Original_SUM_TO) {
+        public virtual int Delete(int Original_PROD_CODE, int Original_PROD_PERIOD, decimal Original_SUM_FROM, decimal Original_SUM_TO, decimal Original_INTEREST_RATE) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_PROD_CODE));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_PROD_PERIOD));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((decimal)(Original_SUM_FROM));
             this.Adapter.DeleteCommand.Parameters[3].Value = ((decimal)(Original_SUM_TO));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_INTEREST_RATE));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5706,11 +5801,12 @@ SELECT PROD_CODE, PROD_PERIOD, SUM_FROM, SUM_TO FROM INTEREST WHERE (PROD_CODE =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int PROD_CODE, int PROD_PERIOD, decimal SUM_FROM, decimal SUM_TO) {
+        public virtual int Insert(int PROD_CODE, int PROD_PERIOD, decimal SUM_FROM, decimal SUM_TO, decimal INTEREST_RATE) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(PROD_CODE));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(PROD_PERIOD));
             this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(SUM_FROM));
             this.Adapter.InsertCommand.Parameters[3].Value = ((decimal)(SUM_TO));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((decimal)(INTEREST_RATE));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5731,15 +5827,17 @@ SELECT PROD_CODE, PROD_PERIOD, SUM_FROM, SUM_TO FROM INTEREST WHERE (PROD_CODE =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int PROD_CODE, int PROD_PERIOD, decimal SUM_FROM, decimal SUM_TO, int Original_PROD_CODE, int Original_PROD_PERIOD, decimal Original_SUM_FROM, decimal Original_SUM_TO) {
+        public virtual int Update(int PROD_CODE, int PROD_PERIOD, decimal SUM_FROM, decimal SUM_TO, decimal INTEREST_RATE, int Original_PROD_CODE, int Original_PROD_PERIOD, decimal Original_SUM_FROM, decimal Original_SUM_TO, decimal Original_INTEREST_RATE) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(PROD_CODE));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(PROD_PERIOD));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(SUM_FROM));
             this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(SUM_TO));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_PROD_CODE));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_PROD_PERIOD));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(Original_SUM_FROM));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(Original_SUM_TO));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(INTEREST_RATE));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_PROD_CODE));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_PROD_PERIOD));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(Original_SUM_FROM));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(Original_SUM_TO));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(Original_INTEREST_RATE));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5760,8 +5858,8 @@ SELECT PROD_CODE, PROD_PERIOD, SUM_FROM, SUM_TO FROM INTEREST WHERE (PROD_CODE =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Original_PROD_CODE, int Original_PROD_PERIOD, decimal Original_SUM_FROM, decimal Original_SUM_TO) {
-            return this.Update(Original_PROD_CODE, Original_PROD_PERIOD, Original_SUM_FROM, Original_SUM_TO, Original_PROD_CODE, Original_PROD_PERIOD, Original_SUM_FROM, Original_SUM_TO);
+        public virtual int Update(decimal INTEREST_RATE, int Original_PROD_CODE, int Original_PROD_PERIOD, decimal Original_SUM_FROM, decimal Original_SUM_TO, decimal Original_INTEREST_RATE) {
+            return this.Update(Original_PROD_CODE, Original_PROD_PERIOD, Original_SUM_FROM, Original_SUM_TO, INTEREST_RATE, Original_PROD_CODE, Original_PROD_PERIOD, Original_SUM_FROM, Original_SUM_TO, Original_INTEREST_RATE);
         }
     }
     
@@ -5899,8 +5997,8 @@ SELECT PROD_CODE, PROD_PERIOD, SUM_FROM, SUM_TO FROM INTEREST WHERE (PROD_CODE =
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[PROD_PERIODS] ([PROD_CODE], [PROD_PERIOD]) VALUES (@PROD_CODE," +
-                " @PROD_PERIOD);\nSELECT PROD_CODE, PROD_PERIOD FROM PROD_PERIODS WHERE (PROD_CODE" +
-                " = @PROD_CODE) AND (PROD_PERIOD = @PROD_PERIOD)";
+                " @PROD_PERIOD);\r\nSELECT PROD_CODE, PROD_PERIOD FROM PROD_PERIODS WHERE (PROD_COD" +
+                "E = @PROD_CODE) AND (PROD_PERIOD = @PROD_PERIOD)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_CODE", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_PERIOD", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_PERIOD", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
