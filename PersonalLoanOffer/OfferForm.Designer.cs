@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.creditProductComboBox = new System.Windows.Forms.ComboBox();
+            this.cREDIT_PRODUCTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.personalLoanOfferDataSet = new PersonalLoanOffer.PersonalLoanOfferDataSet();
             this.creditProductLabel = new System.Windows.Forms.Label();
             this.creditAmountLabel = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.startDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.startDateLabel = new System.Windows.Forms.Label();
-            this.endDateLabel = new System.Windows.Forms.Label();
-            this.endDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.periodLabel = new System.Windows.Forms.Label();
             this.creditOfferGroupBox = new System.Windows.Forms.GroupBox();
+            this.periodValueLabel = new System.Windows.Forms.Label();
+            this.creditAmountValueLabel = new System.Windows.Forms.Label();
+            this.periodTrackBar = new System.Windows.Forms.TrackBar();
+            this.creditAmountTrackBar = new System.Windows.Forms.TrackBar();
+            this.interestRateTextBox = new System.Windows.Forms.TextBox();
             this.generateOfferButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.paymentLabel = new System.Windows.Forms.Label();
             this.calculatePaymentButton = new System.Windows.Forms.Button();
             this.paymentTextBox = new System.Windows.Forms.TextBox();
-            this.calculationPeriodLabel = new System.Windows.Forms.Label();
-            this.calculationPeriodComboBox = new System.Windows.Forms.ComboBox();
-            this.interestRateUpDown = new System.Windows.Forms.NumericUpDown();
             this.interestRateLabel = new System.Windows.Forms.Label();
             this.repaymentScheduleGroupBox = new System.Windows.Forms.GroupBox();
             this.printButton = new System.Windows.Forms.Button();
@@ -67,10 +68,16 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.proD_PERIODSTableAdapter = new PersonalLoanOffer.PersonalLoanOfferDataSetTableAdapters.PROD_PERIODSTableAdapter();
+            this.interestTableAdapter = new PersonalLoanOffer.PersonalLoanOfferDataSetTableAdapters.INTERESTTableAdapter();
+            this.creditTableAdapter = new PersonalLoanOffer.PersonalLoanOfferDataSetTableAdapters.CREDITTableAdapter();
+            this.crediT_PLANTableAdapter1 = new PersonalLoanOffer.PersonalLoanOfferDataSetTableAdapters.CREDIT_PLANTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.cREDIT_PRODUCTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personalLoanOfferDataSet)).BeginInit();
             this.creditOfferGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.periodTrackBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.creditAmountTrackBar)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.interestRateUpDown)).BeginInit();
             this.repaymentScheduleGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.repaymentScheduleGrid)).BeginInit();
             this.offerTabsView.SuspendLayout();
@@ -82,12 +89,25 @@
             // 
             // creditProductComboBox
             // 
+            this.creditProductComboBox.DataSource = this.cREDIT_PRODUCTBindingSource;
+            this.creditProductComboBox.DisplayMember = "PROD_NAME";
             this.creditProductComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.creditProductComboBox.FormattingEnabled = true;
             this.creditProductComboBox.Location = new System.Drawing.Point(117, 37);
             this.creditProductComboBox.Name = "creditProductComboBox";
-            this.creditProductComboBox.Size = new System.Drawing.Size(121, 21);
+            this.creditProductComboBox.Size = new System.Drawing.Size(148, 21);
             this.creditProductComboBox.TabIndex = 0;
+            this.creditProductComboBox.ValueMember = "PROD_CODE";
+            // 
+            // cREDIT_PRODUCTBindingSource
+            // 
+            this.cREDIT_PRODUCTBindingSource.DataMember = "CREDIT_PRODUCT";
+            this.cREDIT_PRODUCTBindingSource.DataSource = this.personalLoanOfferDataSet;
+            // 
+            // personalLoanOfferDataSet
+            // 
+            this.personalLoanOfferDataSet.DataSetName = "PersonalLoanOfferDataSet";
+            this.personalLoanOfferDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // creditProductLabel
             // 
@@ -107,67 +127,79 @@
             this.creditAmountLabel.TabIndex = 2;
             this.creditAmountLabel.Text = "Credit Amount";
             // 
-            // numericUpDown1
+            // periodLabel
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(116, 64);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 3;
-            // 
-            // startDateTimePicker
-            // 
-            this.startDateTimePicker.Location = new System.Drawing.Point(116, 90);
-            this.startDateTimePicker.Name = "startDateTimePicker";
-            this.startDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.startDateTimePicker.TabIndex = 4;
-            // 
-            // startDateLabel
-            // 
-            this.startDateLabel.AutoSize = true;
-            this.startDateLabel.Location = new System.Drawing.Point(17, 96);
-            this.startDateLabel.Name = "startDateLabel";
-            this.startDateLabel.Size = new System.Drawing.Size(55, 13);
-            this.startDateLabel.TabIndex = 5;
-            this.startDateLabel.Text = "Start Date";
-            // 
-            // endDateLabel
-            // 
-            this.endDateLabel.AutoSize = true;
-            this.endDateLabel.Location = new System.Drawing.Point(20, 127);
-            this.endDateLabel.Name = "endDateLabel";
-            this.endDateLabel.Size = new System.Drawing.Size(52, 13);
-            this.endDateLabel.TabIndex = 7;
-            this.endDateLabel.Text = "End Date";
-            // 
-            // endDateTimePicker
-            // 
-            this.endDateTimePicker.Location = new System.Drawing.Point(116, 121);
-            this.endDateTimePicker.Name = "endDateTimePicker";
-            this.endDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.endDateTimePicker.TabIndex = 6;
+            this.periodLabel.AutoSize = true;
+            this.periodLabel.Location = new System.Drawing.Point(20, 127);
+            this.periodLabel.Name = "periodLabel";
+            this.periodLabel.Size = new System.Drawing.Size(37, 13);
+            this.periodLabel.TabIndex = 7;
+            this.periodLabel.Text = "Period";
             // 
             // creditOfferGroupBox
             // 
+            this.creditOfferGroupBox.Controls.Add(this.periodValueLabel);
+            this.creditOfferGroupBox.Controls.Add(this.creditAmountValueLabel);
+            this.creditOfferGroupBox.Controls.Add(this.periodTrackBar);
+            this.creditOfferGroupBox.Controls.Add(this.creditAmountTrackBar);
+            this.creditOfferGroupBox.Controls.Add(this.interestRateTextBox);
             this.creditOfferGroupBox.Controls.Add(this.generateOfferButton);
             this.creditOfferGroupBox.Controls.Add(this.groupBox1);
-            this.creditOfferGroupBox.Controls.Add(this.calculationPeriodLabel);
-            this.creditOfferGroupBox.Controls.Add(this.calculationPeriodComboBox);
-            this.creditOfferGroupBox.Controls.Add(this.interestRateUpDown);
             this.creditOfferGroupBox.Controls.Add(this.interestRateLabel);
             this.creditOfferGroupBox.Controls.Add(this.creditProductLabel);
-            this.creditOfferGroupBox.Controls.Add(this.endDateLabel);
+            this.creditOfferGroupBox.Controls.Add(this.periodLabel);
             this.creditOfferGroupBox.Controls.Add(this.creditProductComboBox);
-            this.creditOfferGroupBox.Controls.Add(this.endDateTimePicker);
             this.creditOfferGroupBox.Controls.Add(this.creditAmountLabel);
-            this.creditOfferGroupBox.Controls.Add(this.startDateLabel);
-            this.creditOfferGroupBox.Controls.Add(this.numericUpDown1);
-            this.creditOfferGroupBox.Controls.Add(this.startDateTimePicker);
             this.creditOfferGroupBox.Location = new System.Drawing.Point(12, 12);
             this.creditOfferGroupBox.Name = "creditOfferGroupBox";
             this.creditOfferGroupBox.Size = new System.Drawing.Size(332, 319);
             this.creditOfferGroupBox.TabIndex = 8;
             this.creditOfferGroupBox.TabStop = false;
             this.creditOfferGroupBox.Text = "Credit Offer";
+            // 
+            // periodValueLabel
+            // 
+            this.periodValueLabel.AutoSize = true;
+            this.periodValueLabel.Location = new System.Drawing.Point(275, 127);
+            this.periodValueLabel.Name = "periodValueLabel";
+            this.periodValueLabel.Size = new System.Drawing.Size(13, 13);
+            this.periodValueLabel.TabIndex = 21;
+            this.periodValueLabel.Text = "1";
+            // 
+            // creditAmountValueLabel
+            // 
+            this.creditAmountValueLabel.AutoSize = true;
+            this.creditAmountValueLabel.Location = new System.Drawing.Point(272, 76);
+            this.creditAmountValueLabel.Name = "creditAmountValueLabel";
+            this.creditAmountValueLabel.Size = new System.Drawing.Size(25, 13);
+            this.creditAmountValueLabel.TabIndex = 20;
+            this.creditAmountValueLabel.Text = "100";
+            // 
+            // periodTrackBar
+            // 
+            this.periodTrackBar.Location = new System.Drawing.Point(106, 117);
+            this.periodTrackBar.Name = "periodTrackBar";
+            this.periodTrackBar.Size = new System.Drawing.Size(159, 45);
+            this.periodTrackBar.TabIndex = 19;
+            this.periodTrackBar.Scroll += new System.EventHandler(this.periodTrackBar_Scroll);
+            // 
+            // creditAmountTrackBar
+            // 
+            this.creditAmountTrackBar.Location = new System.Drawing.Point(106, 66);
+            this.creditAmountTrackBar.Name = "creditAmountTrackBar";
+            this.creditAmountTrackBar.Size = new System.Drawing.Size(160, 45);
+            this.creditAmountTrackBar.TabIndex = 18;
+            this.creditAmountTrackBar.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
+            // interestRateTextBox
+            // 
+            this.interestRateTextBox.Enabled = false;
+            this.interestRateTextBox.Location = new System.Drawing.Point(106, 179);
+            this.interestRateTextBox.Name = "interestRateTextBox";
+            this.interestRateTextBox.ReadOnly = true;
+            this.interestRateTextBox.Size = new System.Drawing.Size(159, 20);
+            this.interestRateTextBox.TabIndex = 17;
+            this.interestRateTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // generateOfferButton
             // 
@@ -176,7 +208,7 @@
             this.generateOfferButton.Name = "generateOfferButton";
             this.generateOfferButton.Size = new System.Drawing.Size(75, 23);
             this.generateOfferButton.TabIndex = 16;
-            this.generateOfferButton.Text = "Search";
+            this.generateOfferButton.Text = "Generate Schedule";
             this.generateOfferButton.UseVisualStyleBackColor = false;
             this.generateOfferButton.Click += new System.EventHandler(this.generateOfferButton_Click);
             // 
@@ -220,38 +252,10 @@
             this.paymentTextBox.TabIndex = 14;
             this.paymentTextBox.TextChanged += new System.EventHandler(this.paymentTextBox_TextChanged);
             // 
-            // calculationPeriodLabel
-            // 
-            this.calculationPeriodLabel.AutoSize = true;
-            this.calculationPeriodLabel.Location = new System.Drawing.Point(20, 187);
-            this.calculationPeriodLabel.Name = "calculationPeriodLabel";
-            this.calculationPeriodLabel.Size = new System.Drawing.Size(92, 13);
-            this.calculationPeriodLabel.TabIndex = 11;
-            this.calculationPeriodLabel.Text = "Calculation Period";
-            // 
-            // calculationPeriodComboBox
-            // 
-            this.calculationPeriodComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.calculationPeriodComboBox.FormattingEnabled = true;
-            this.calculationPeriodComboBox.Items.AddRange(new object[] {
-            "Monthly",
-            "Yearly"});
-            this.calculationPeriodComboBox.Location = new System.Drawing.Point(117, 184);
-            this.calculationPeriodComboBox.Name = "calculationPeriodComboBox";
-            this.calculationPeriodComboBox.Size = new System.Drawing.Size(121, 21);
-            this.calculationPeriodComboBox.TabIndex = 10;
-            // 
-            // interestRateUpDown
-            // 
-            this.interestRateUpDown.Location = new System.Drawing.Point(117, 155);
-            this.interestRateUpDown.Name = "interestRateUpDown";
-            this.interestRateUpDown.Size = new System.Drawing.Size(120, 20);
-            this.interestRateUpDown.TabIndex = 9;
-            // 
             // interestRateLabel
             // 
             this.interestRateLabel.AutoSize = true;
-            this.interestRateLabel.Location = new System.Drawing.Point(20, 155);
+            this.interestRateLabel.Location = new System.Drawing.Point(17, 182);
             this.interestRateLabel.Name = "interestRateLabel";
             this.interestRateLabel.Size = new System.Drawing.Size(68, 13);
             this.interestRateLabel.TabIndex = 8;
@@ -338,6 +342,7 @@
             this.saveOfferButton.TabIndex = 10;
             this.saveOfferButton.Text = "Save";
             this.saveOfferButton.UseVisualStyleBackColor = false;
+            this.saveOfferButton.Click += new System.EventHandler(this.saveOfferButton_Click);
             // 
             // offerTabsView
             // 
@@ -434,6 +439,22 @@
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
+            // proD_PERIODSTableAdapter
+            // 
+            this.proD_PERIODSTableAdapter.ClearBeforeFill = true;
+            // 
+            // interestTableAdapter
+            // 
+            this.interestTableAdapter.ClearBeforeFill = true;
+            // 
+            // creditTableAdapter
+            // 
+            this.creditTableAdapter.ClearBeforeFill = true;
+            // 
+            // crediT_PLANTableAdapter1
+            // 
+            this.crediT_PLANTableAdapter1.ClearBeforeFill = true;
+            // 
             // OfferForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -447,12 +468,15 @@
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "OfferForm";
             this.Text = "OfferForm";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.Load += new System.EventHandler(this.OfferForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.cREDIT_PRODUCTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personalLoanOfferDataSet)).EndInit();
             this.creditOfferGroupBox.ResumeLayout(false);
             this.creditOfferGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.periodTrackBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.creditAmountTrackBar)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.interestRateUpDown)).EndInit();
             this.repaymentScheduleGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.repaymentScheduleGrid)).EndInit();
             this.offerTabsView.ResumeLayout(false);
@@ -469,19 +493,12 @@
         private System.Windows.Forms.ComboBox creditProductComboBox;
         private System.Windows.Forms.Label creditProductLabel;
         private System.Windows.Forms.Label creditAmountLabel;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.DateTimePicker startDateTimePicker;
-        private System.Windows.Forms.Label startDateLabel;
-        private System.Windows.Forms.Label endDateLabel;
-        private System.Windows.Forms.DateTimePicker endDateTimePicker;
+        private System.Windows.Forms.Label periodLabel;
         private System.Windows.Forms.GroupBox creditOfferGroupBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label paymentLabel;
         private System.Windows.Forms.Button calculatePaymentButton;
         private System.Windows.Forms.TextBox paymentTextBox;
-        private System.Windows.Forms.Label calculationPeriodLabel;
-        private System.Windows.Forms.ComboBox calculationPeriodComboBox;
-        private System.Windows.Forms.NumericUpDown interestRateUpDown;
         private System.Windows.Forms.Label interestRateLabel;
         private System.Windows.Forms.Button generateOfferButton;
         private System.Windows.Forms.GroupBox repaymentScheduleGroupBox;
@@ -505,5 +522,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         protected System.Windows.Forms.Button saveOfferButton;
+        private PersonalLoanOfferDataSet personalLoanOfferDataSet;
+        private System.Windows.Forms.BindingSource cREDIT_PRODUCTBindingSource;
+        private System.Windows.Forms.TextBox interestRateTextBox;
+        private System.Windows.Forms.Label periodValueLabel;
+        private System.Windows.Forms.Label creditAmountValueLabel;
+        private System.Windows.Forms.TrackBar periodTrackBar;
+        private System.Windows.Forms.TrackBar creditAmountTrackBar;
+        private PersonalLoanOfferDataSetTableAdapters.PROD_PERIODSTableAdapter proD_PERIODSTableAdapter;
+        private PersonalLoanOfferDataSetTableAdapters.INTERESTTableAdapter interestTableAdapter;
+        private PersonalLoanOfferDataSetTableAdapters.CREDITTableAdapter creditTableAdapter;
+        private PersonalLoanOfferDataSetTableAdapters.CREDIT_PLANTableAdapter crediT_PLANTableAdapter1;
     }
 }
