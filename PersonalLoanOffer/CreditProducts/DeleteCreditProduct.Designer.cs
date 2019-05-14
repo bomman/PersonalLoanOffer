@@ -1,6 +1,6 @@
 ﻿namespace PersonalLoanOffer.CreditProducts
 {
-    partial class AddCreditProduct
+    partial class DeleteCreditProduct
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.label3 = new System.Windows.Forms.Label();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.sumToLabel = new System.Windows.Forms.Label();
@@ -39,17 +40,30 @@
             this.label2 = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.createButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.personalLoanOfferDataSet1 = new PersonalLoanOffer.PersonalLoanOfferDataSet();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.crediT_PRODUCTTableAdapter1 = new PersonalLoanOffer.PersonalLoanOfferDataSetTableAdapters.CREDIT_PRODUCTTableAdapter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sumToUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sumFromUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.personalLoanOfferDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label3.Location = new System.Drawing.Point(85, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(143, 17);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Delete Credit Product";
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.deleteButton.Location = new System.Drawing.Point(102, 225);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.TabIndex = 7;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -62,10 +76,10 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.nameTextBox);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 29);
+            this.groupBox1.Location = new System.Drawing.Point(12, 28);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(270, 186);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
             // button1
@@ -91,6 +105,7 @@
             this.statusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.statusComboBox.FormattingEnabled = true;
             this.statusComboBox.Items.AddRange(new object[] {
+            "All",
             "Yes",
             "No"});
             this.statusComboBox.Location = new System.Drawing.Point(90, 56);
@@ -176,52 +191,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             // 
-            // createButton
-            // 
-            this.createButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.createButton.Location = new System.Drawing.Point(115, 221);
-            this.createButton.Name = "createButton";
-            this.createButton.Size = new System.Drawing.Size(75, 23);
-            this.createButton.TabIndex = 1;
-            this.createButton.Text = "Add";
-            this.createButton.UseVisualStyleBackColor = true;
-            this.createButton.Click += new System.EventHandler(this.addButton_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(85, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Add Credit Product";
-            // 
-            // personalLoanOfferDataSet1
-            // 
-            this.personalLoanOfferDataSet1.DataSetName = "PersonalLoanOfferDataSet";
-            this.personalLoanOfferDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // crediT_PRODUCTTableAdapter1
-            // 
-            this.crediT_PRODUCTTableAdapter1.ClearBeforeFill = true;
-            // 
-            // AddCreditProduct
+            // DeleteCreditProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 258);
+            this.ClientSize = new System.Drawing.Size(294, 258);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.createButton);
+            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.groupBox1);
-            this.Name = "AddCreditProduct";
-            this.Text = "AddCreditProduct";
+            this.Name = "DeleteCreditProduct";
+            this.Text = "DeleteCreditProduct";
+            this.Load += new System.EventHandler(this.DeleteCreditProduct_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sumToUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sumFromUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.personalLoanOfferDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,20 +213,17 @@
 
         #endregion
 
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox nameTextBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox statusComboBox;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label sumToLabel;
+        private System.Windows.Forms.ComboBox statusComboBox;
         private System.Windows.Forms.NumericUpDown sumToUpDown;
         private System.Windows.Forms.Label sumFromLabel;
         private System.Windows.Forms.NumericUpDown sumFromUpDown;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button createButton;
-        private System.Windows.Forms.Label label3;
-        private PersonalLoanOfferDataSet personalLoanOfferDataSet1;
-        private System.Windows.Forms.BindingSource bindingSource1;
-        private PersonalLoanOfferDataSetTableAdapters.CREDIT_PRODUCTTableAdapter crediT_PRODUCTTableAdapter1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.Label label1;
     }
 }

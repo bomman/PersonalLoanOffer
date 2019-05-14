@@ -41,6 +41,8 @@
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.personalLoanOfferDataSet1 = new PersonalLoanOffer.PersonalLoanOfferDataSet();
+            this.crediT_PRODUCTTableAdapter1 = new PersonalLoanOffer.PersonalLoanOfferDataSetTableAdapters.CREDIT_PRODUCTTableAdapter();
+            this.clientTableAdapter1 = new PersonalLoanOffer.PersonalLoanOfferDataSetTableAdapters.CLIENTTableAdapter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sumToUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sumFromUpDown)).BeginInit();
@@ -199,6 +201,14 @@
             this.personalLoanOfferDataSet1.DataSetName = "PersonalLoanOfferDataSet";
             this.personalLoanOfferDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // crediT_PRODUCTTableAdapter1
+            // 
+            this.crediT_PRODUCTTableAdapter1.ClearBeforeFill = true;
+            // 
+            // clientTableAdapter1
+            // 
+            this.clientTableAdapter1.ClearBeforeFill = true;
+            // 
             // EditCreditProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,5 +245,7 @@
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Label label1;
         private PersonalLoanOfferDataSet personalLoanOfferDataSet1;
+        private PersonalLoanOfferDataSetTableAdapters.CREDIT_PRODUCTTableAdapter crediT_PRODUCTTableAdapter1;
+        private PersonalLoanOfferDataSetTableAdapters.CLIENTTableAdapter clientTableAdapter1;
     }
 }

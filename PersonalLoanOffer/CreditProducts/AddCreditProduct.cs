@@ -16,9 +16,15 @@ namespace PersonalLoanOffer.CreditProducts
             var status = statusComboBox.Text == "Yes" ? "Y" : "N";
             var sumFrom = sumFromUpDown.Value;
             var sumTo = sumToUpDown.Value;
-            personalLoanOfferDataSet1.CREDIT_PRODUCT
-                .AddCREDIT_PRODUCTRow(name, status, sumFrom, sumTo, DateTime.Now);
-            personalLoanOfferDataSet1.CREDIT_PRODUCT.AcceptChanges();
+            this.crediT_PRODUCTTableAdapter1.Insert(name, status, sumFrom, sumTo, DateTime.Now);
+
+            //this.bindingSource1.DataSource = personalLoanOfferDataSet1.CREDIT_PRODUCT.;
+            //this.bindingSource1.Add(personalLoanOfferDataSet1.CREDIT_PRODUCT
+            //    .AddCREDIT_PRODUCTRow(name, status, sumFrom, sumTo, DateTime.Now));
+
+            //personalLoanOfferDataSet1.CREDIT_PRODUCT.AcceptChanges();
+            this.ParentForm.Refresh();
+
             this.Close();
         }
     }
