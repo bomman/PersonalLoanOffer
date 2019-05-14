@@ -62,7 +62,7 @@ namespace PersonalLoanOffer
         private void deleteButton_Click(object sender, EventArgs e)
         {
             var selectedRecord = int.Parse(this.clientProductsGridView.CurrentRow.Cells[0].Value.ToString());
-            DeleteCreditProduct deleteCreditForm = new DeleteCreditProduct(selectedRecord, this.personalLoanOfferDataSet);
+            DeleteCreditProduct deleteCreditForm = new DeleteCreditProduct(selectedRecord, this.personalLoanOfferDataSet, this.clientProductsGridView);
             deleteCreditForm.MdiParent = this.ParentForm;
             deleteCreditForm.Show();
         }

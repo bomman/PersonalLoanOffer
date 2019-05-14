@@ -105,6 +105,7 @@
             // statusComboBox
             // 
             this.statusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.statusComboBox.Enabled = false;
             this.statusComboBox.FormattingEnabled = true;
             this.statusComboBox.Items.AddRange(new object[] {
             "All",
@@ -117,6 +118,7 @@
             // 
             // sumToUpDown
             // 
+            this.sumToUpDown.Enabled = false;
             this.sumToUpDown.Location = new System.Drawing.Point(90, 142);
             this.sumToUpDown.Maximum = new decimal(new int[] {
             10,
@@ -148,6 +150,7 @@
             // 
             // sumFromUpDown
             // 
+            this.sumFromUpDown.Enabled = false;
             this.sumFromUpDown.Location = new System.Drawing.Point(90, 100);
             this.sumFromUpDown.Maximum = new decimal(new int[] {
             10,
@@ -179,6 +182,7 @@
             // 
             // nameTextBox
             // 
+            this.nameTextBox.Enabled = false;
             this.nameTextBox.Location = new System.Drawing.Point(90, 19);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(158, 20);

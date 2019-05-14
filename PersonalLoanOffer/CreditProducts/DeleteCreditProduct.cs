@@ -7,12 +7,14 @@ namespace PersonalLoanOffer.CreditProducts
     {
         private int selectedRecord;
         private PersonalLoanOfferDataSet _personalLoanOfferDataSet;
+        private DataGridView _parentDataGridView;
 
-        public DeleteCreditProduct(int selectedRecord, PersonalLoanOfferDataSet personalLoanOfferDataSet)
+        public DeleteCreditProduct(int selectedRecord, PersonalLoanOfferDataSet personalLoanOfferDataSet, DataGridView clientProductsGridView)
         {
             InitializeComponent();
             this.selectedRecord = selectedRecord;
             _personalLoanOfferDataSet = personalLoanOfferDataSet;
+            _parentDataGridView = clientProductsGridView;
         }
 
         private void DeleteCreditProduct_Load(object sender, EventArgs e)
@@ -32,6 +34,7 @@ namespace PersonalLoanOffer.CreditProducts
             var creditProduct = _personalLoanOfferDataSet.CREDIT_PRODUCT.FindByPROD_CODE(selectedRecord);
             crediT_PRODUCTTableAdapter1.Delete(creditProduct.PROD_CODE, creditProduct.PROD_NAME, creditProduct.PROD_ACTIVE, creditProduct.PROD_SUM_FROM, creditProduct.PROD_SUM_TO, creditProduct.MODIF_DATE);
 
+            crediT_PRODUCTTableAdapter1.Fill(this.crediT_PRODUCTTableAdapter1.GetData());
             Close();
         }
     }

@@ -57,7 +57,6 @@
             this.personalLoanOfferDataSet1 = new PersonalLoanOffer.PersonalLoanOfferDataSet();
             this.addButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
-            this.detailsButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.clientProductsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cREDIT_PRODUCTBindingSource)).BeginInit();
@@ -336,18 +335,9 @@
             this.editButton.UseVisualStyleBackColor = true;
             this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
-            // detailsButton
-            // 
-            this.detailsButton.Location = new System.Drawing.Point(214, 415);
-            this.detailsButton.Name = "detailsButton";
-            this.detailsButton.Size = new System.Drawing.Size(75, 23);
-            this.detailsButton.TabIndex = 6;
-            this.detailsButton.Text = "Details";
-            this.detailsButton.UseVisualStyleBackColor = true;
-            // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(311, 415);
+            this.deleteButton.Location = new System.Drawing.Point(225, 415);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 23);
             this.deleteButton.TabIndex = 7;
@@ -362,7 +352,6 @@
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(810, 450);
             this.Controls.Add(this.deleteButton);
-            this.Controls.Add(this.detailsButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.controlsGroupBox);
@@ -415,7 +404,6 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button editButton;
-        private System.Windows.Forms.Button detailsButton;
         private System.Windows.Forms.Button deleteButton;
     }
 }
