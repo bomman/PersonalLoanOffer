@@ -60,6 +60,9 @@
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.offerNumberUpDown = new System.Windows.Forms.NumericUpDown();
             this.offerNumberLabel = new System.Windows.Forms.Label();
+            this.detailsButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.personalLoanOfferDataSet1 = new PersonalLoanOffer.PersonalLoanOfferDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.personalLoanOfferDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalLoanOfferDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cREDITBindingSource)).BeginInit();
@@ -68,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.interestRateUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.creditAmountUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.offerNumberUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personalLoanOfferDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // personalLoanOfferDataSet
@@ -325,12 +329,39 @@
             this.offerNumberLabel.TabIndex = 1;
             this.offerNumberLabel.Text = "Offer Number";
             // 
+            // detailsButton
+            // 
+            this.detailsButton.Location = new System.Drawing.Point(15, 417);
+            this.detailsButton.Name = "detailsButton";
+            this.detailsButton.Size = new System.Drawing.Size(75, 23);
+            this.detailsButton.TabIndex = 15;
+            this.detailsButton.Text = "Details";
+            this.detailsButton.UseVisualStyleBackColor = true;
+            this.detailsButton.Click += new System.EventHandler(this.detailsButton_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(119, 417);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Edit";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // personalLoanOfferDataSet1
+            // 
+            this.personalLoanOfferDataSet1.DataSetName = "PersonalLoanOfferDataSet";
+            this.personalLoanOfferDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // OfferList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(647, 450);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.detailsButton);
             this.Controls.Add(this.controlGroupBox);
             this.Controls.Add(this.offerDataGridView);
             this.Name = "OfferList";
@@ -345,6 +376,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.interestRateUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.creditAmountUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.offerNumberUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personalLoanOfferDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -381,5 +413,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cREDITSUMDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cREDITNOTEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mODIFDATEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button detailsButton;
+        private System.Windows.Forms.Button button1;
+        private PersonalLoanOfferDataSet personalLoanOfferDataSet1;
     }
 }

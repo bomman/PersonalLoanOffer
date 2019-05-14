@@ -94,6 +94,18 @@
     <Compile Include="OfferList.Designer.cs">
       <DependentUpon>OfferList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Offers\EditOffer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Offers\EditOffer.Designer.cs">
+      <DependentUpon>EditOffer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Offers\OfferDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Offers\OfferDetails.Designer.cs">
+      <DependentUpon>OfferDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="PersonalLoanOfferDataSet.cs">
       <DependentUpon>PersonalLoanOfferDataSet.xsd</DependentUpon>
     </Compile>
@@ -127,6 +139,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OfferList.resx">
       <DependentUpon>OfferList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Offers\EditOffer.resx">
+      <DependentUpon>EditOffer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Offers\OfferDetails.resx">
+      <DependentUpon>OfferDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -163,5 +181,6 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
