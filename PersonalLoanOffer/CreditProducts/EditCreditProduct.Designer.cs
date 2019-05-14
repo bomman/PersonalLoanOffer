@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label3 = new System.Windows.Forms.Label();
             this.editButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -42,11 +43,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.personalLoanOfferDataSet1 = new PersonalLoanOffer.PersonalLoanOfferDataSet();
             this.crediT_PRODUCTTableAdapter1 = new PersonalLoanOffer.PersonalLoanOfferDataSetTableAdapters.CREDIT_PRODUCTTableAdapter();
-            this.clientTableAdapter1 = new PersonalLoanOffer.PersonalLoanOfferDataSetTableAdapters.CLIENTTableAdapter();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sumToUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sumFromUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalLoanOfferDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -205,10 +207,6 @@
             // 
             this.crediT_PRODUCTTableAdapter1.ClearBeforeFill = true;
             // 
-            // clientTableAdapter1
-            // 
-            this.clientTableAdapter1.ClearBeforeFill = true;
-            // 
             // EditCreditProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,6 +223,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.sumToUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sumFromUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personalLoanOfferDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,6 +245,6 @@
         private System.Windows.Forms.Label label1;
         private PersonalLoanOfferDataSet personalLoanOfferDataSet1;
         private PersonalLoanOfferDataSetTableAdapters.CREDIT_PRODUCTTableAdapter crediT_PRODUCTTableAdapter1;
-        private PersonalLoanOfferDataSetTableAdapters.CLIENTTableAdapter clientTableAdapter1;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }

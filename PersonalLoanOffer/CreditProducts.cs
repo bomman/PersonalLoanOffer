@@ -54,7 +54,7 @@ namespace PersonalLoanOffer
         private void editButton_Click(object sender, EventArgs e)
         {
             var selectedRecord = int.Parse(this.clientProductsGridView.CurrentRow.Cells[0].Value.ToString());
-            EditCreditProduct editCreditForm = new EditCreditProduct(selectedRecord);
+            EditCreditProduct editCreditForm = new EditCreditProduct(selectedRecord, this.personalLoanOfferDataSet);
             editCreditForm.MdiParent = this.ParentForm;
             editCreditForm.Show();
         }
@@ -62,7 +62,7 @@ namespace PersonalLoanOffer
         private void deleteButton_Click(object sender, EventArgs e)
         {
             var selectedRecord = int.Parse(this.clientProductsGridView.CurrentRow.Cells[0].Value.ToString());
-            DeleteCreditProduct deleteCreditForm = new DeleteCreditProduct(selectedRecord);
+            DeleteCreditProduct deleteCreditForm = new DeleteCreditProduct(selectedRecord, this.personalLoanOfferDataSet);
             deleteCreditForm.MdiParent = this.ParentForm;
             deleteCreditForm.Show();
         }

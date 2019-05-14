@@ -40,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.crediT_PRODUCTTableAdapter1 = new PersonalLoanOffer.PersonalLoanOfferDataSetTableAdapters.CREDIT_PRODUCTTableAdapter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sumToUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sumFromUpDown)).BeginInit();
@@ -64,6 +65,7 @@
             this.deleteButton.TabIndex = 7;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // groupBox1
             // 
@@ -191,6 +193,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             // 
+            // crediT_PRODUCTTableAdapter1
+            // 
+            this.crediT_PRODUCTTableAdapter1.ClearBeforeFill = true;
+            // 
             // DeleteCreditProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,5 +231,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Label label1;
+        private PersonalLoanOfferDataSetTableAdapters.CREDIT_PRODUCTTableAdapter crediT_PRODUCTTableAdapter1;
     }
 }
